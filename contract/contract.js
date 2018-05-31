@@ -50,3 +50,4 @@ class AnouncementContract {
     return res
   }
 }
+module.exports = AnouncementContract;
