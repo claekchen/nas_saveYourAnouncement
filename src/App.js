@@ -3,12 +3,11 @@ import Search from './Search'
 import Add from './Add'
 import List from './List'
 import './App.css'
-import NebPay from './nebPay'
-
+var NebPay = require("./dist/nebpay");
+var nebPay = new NebPay();
 class App extends Component {
   constructor (props) {
     super(props)
-    this.neb = new NebPay()
     this.renderRouter = this.renderRouter.bind(this)
     this.onSwitchRouter = this.onSwitchRouter.bind(this)
     this.state = {
