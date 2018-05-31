@@ -10,7 +10,7 @@ class Search extends Component {
   }
   render () {
     return (
-      <div className='App'>
+      <div className='search'>
         <h3>
           查询公告
         </h3>

@@ -10,7 +10,7 @@ class Add extends Component {
   }
   render () {
     return (
-      <div className='App'>
+      <div className='add'>
         <h3>
           新建公告
         </h3>
