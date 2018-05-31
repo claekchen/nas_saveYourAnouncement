@@ -33,9 +33,9 @@ class List extends Component {
   renderList (data) {
     let res = []
     data.map((item, index) => {
-        const elem = <Panel header = {item.name} key = {index}>
+        const elem = <Collapse.Panel header = {item.name} key = {index}>
                         <p>{item.text}</p>
-                     </Panel>
+                     </Collapse.Panel>
         res.push(elem)
     })
     return res

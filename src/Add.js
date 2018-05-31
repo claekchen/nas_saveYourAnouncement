@@ -15,17 +15,18 @@ class Add extends Component {
     }
   }
   onNameChange (e) {
-    this.setState({name: e.targer.value})
+    this.setState({name: e.target.value})
   }
   onTextChange (e) {
     this.setState({text: e.target.value})
   }
   onSubmit () {
+    const {onSwitchRouter} = this.props
     const {name, text} = this.state
     if (name === "" || text === "") {
       alert("不能提交空的声明！")
     } else {
-      alert("提交成功")
+      onSwitchRouter('list')
     }
   }
   onSwitchToSearch () {
