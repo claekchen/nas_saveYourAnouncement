@@ -8,6 +8,7 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.renderRouter = this.renderRouter.bind(this)
+    this.onSwitchRouter = this.onSwitchRouter.bind(this)
     this.state = {
       router: 'search'
     }
@@ -16,12 +17,15 @@ class App extends Component {
     const {router} = this.state
     switch (router) {
       case 'search':
-        return <Search />
+        return <Search onSwitchRouter = {this.onSwitchRouter}/>
       case 'add':
-        return <Add />
+        return <Add onSwitchRouter = {this.onSwitchRouter}/>
       case 'list':
-        return <List />
+        return <List onSwitchRouter = {this.onSwitchRouter}/>
     }
+  }
+  onSwitchRouter (router) {
+    this.setState({router: router})
   }
   render () {
     return (

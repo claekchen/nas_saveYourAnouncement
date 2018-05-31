@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Collapse } from 'antd'
+import { Collapse, Button } from 'antd'
 import './Add.css'
 const mock = [
     {
@@ -26,6 +26,7 @@ const mock = [
 class List extends Component {
   constructor (props) {
     super(props)
+    this.onSwitchToSearch = this.onSwitchToSearch.bind(this)
     this.state = {
     }
   }
@@ -35,13 +36,18 @@ class List extends Component {
         const elem = <Panel header = {item.name} key = {index}>
                         <p>{item.text}</p>
                      </Panel>
-        res .push(elem)
+        res.push(elem)
     })
     return res
+  }
+  onSwitchToSearch () {
+    const {onSwitchRouter} = this.props
+    onSwitchRouter('search')
   }
   render () {
     return (
       <div className='list'>
+        <Button onClick = {this.onSwitchToSearch} type='primary'>返回查询</Button>
         <Collapse>
             {this.renderList(mock)}
         </Collapse>
