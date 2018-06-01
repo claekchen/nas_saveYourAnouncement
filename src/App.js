@@ -3,8 +3,6 @@ import Search from './Search'
 import Add from './Add'
 import List from './List'
 import './App.css'
-var NebPay = require("./dist/nebpay");
-var nebPay = new NebPay();
 class App extends Component {
   constructor (props) {
     super(props)

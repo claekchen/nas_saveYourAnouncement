@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Input, Button } from 'antd'
 import './Search.css'
+import AnouncementContractApi from './ContractApi'
+let api = new AnouncementContractApi()
 
 class Search extends Component {
   constructor (props) {
@@ -15,12 +17,15 @@ class Search extends Component {
   onNameChange (e) {
     this.setState({name: e.target.value})
   }
+  onSuccess (res) {
+    console.log(res)
+  }
   onSearch () {
     const {name} = this.state
     if (name === "") {
       alert('不能查询空的名字！')
     } else {
-      alert('yes')
+      api.getByName(name, this.onSuccess)
     }
   }
   onSwitchToAdd () {

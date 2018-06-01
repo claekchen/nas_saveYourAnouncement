@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Input, Button } from 'antd'
+import AnouncementContractApi from './ContractApi'
 import './Add.css'
+let api = new AnouncementContractApi()
 
 class Add extends Component {
   constructor (props) {
@@ -20,13 +22,16 @@ class Add extends Component {
   onTextChange (e) {
     this.setState({text: e.target.value})
   }
+  onSuccess (res) {
+    console.log('成功')
+  }
   onSubmit () {
     const {onSwitchRouter} = this.props
     const {name, text} = this.state
     if (name === "" || text === "") {
       alert("不能提交空的声明！")
     } else {
-      onSwitchRouter('list')
+      api.add(name,text,this.onSuccess)
     }
   }
   onSwitchToSearch () {
