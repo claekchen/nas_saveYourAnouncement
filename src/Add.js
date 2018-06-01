@@ -41,15 +41,19 @@ class Add extends Component {
   render () {
     return (
       <div className='add'>
-        <h3>
+        <h1>
           新建公告
-        </h3>
-        <Input.Group>
-          <Input onChange = {this.onNameChange} placeholder='姓名' />
-          <Input.TextArea onChange = {this.onTextChange} placeholder='正文' />
-        </Input.Group>
-        <Button onClick = {this.onSubmit} type='primary'>确定</Button>
-        <Button onClick = {this.onSwitchToSearch} type='primary'>返回查询</Button>
+        </h1>
+        <div className="input-container">
+          <Input.Group size="large">
+            <Input onChange = {this.onNameChange} placeholder='姓名' />
+            <br/>
+            <br/>
+            <br/>
+            <Input.TextArea className="textarea" autosize={{minRows: 5, maxRows: 25}} onChange = {this.onTextChange} placeholder='正文' />
+          </Input.Group>
+        </div>
+        <Button className="button-add" size="large" onClick = {this.onSubmit} type='primary'>新建</Button>
       </div>
     )
   }

@@ -35,14 +35,15 @@ class Search extends Component {
   render () {
     return (
       <div className='search'>
-        <h3>
+        <h1>
           查询公告
-        </h3>
-        <Input.Group>
-          <Input onChange = {this.onNameChange} placeholder = "输入姓名，查询此人被记录的所有公告"/>
-        </Input.Group>
-        <Button onClick = {this.onSearch} type='primary'>查询</Button>
-        <Button onClick = {this.onSwitchToAdd} type='primary'>我想添加一条公告</Button>
+        </h1>
+        <div className="input-container">
+          <Input.Group size="large">
+            <Input onChange = {this.onNameChange} placeholder = "输入姓名，查询此人被记录的所有公告"/>
+          </Input.Group>
+        </div>
+        <Button className="button-search" size="large" onClick = {this.onSearch} type='primary'>查询</Button>
       </div>
     )
   }
