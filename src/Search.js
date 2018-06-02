@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
-import { Input, Button } from 'antd'
+import Input from 'antd/lib/input'
+import Button from 'antd/lib/button'
 import PropTypes from 'prop-types'
+import 'antd/lib/input/style'
+import 'antd/lib/button/style'
 import './Search.css'
 import AnouncementContractApi from './ContractApi'
 let api = new AnouncementContractApi()

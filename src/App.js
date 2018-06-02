@@ -1,8 +1,13 @@
 import React, { Component } from 'react'
-import { Layout, Menu, Icon } from 'antd'
+import Layout from 'antd/lib/layout'
+import Menu from 'antd/lib/menu'
+import Icon from 'antd/lib/icon'
 import Search from './Search'
 import Add from './Add'
 import List from './List'
+import 'antd/lib/menu/style'
+import 'antd/lib/layout/style'
+import 'antd/lib/icon/style'
 import './App.css'
 const {Header, Sider, Footer, Content} = Layout
 class App extends Component {

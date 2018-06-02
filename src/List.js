@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Collapse } from 'antd'
+import Collapse from 'antd/lib/collapse'
 import PropTypes from 'prop-types'
 import './List.css'
+import 'antd/lib/collapse/style'
 class List extends Component {
   constructor (props) {
     super(props)
