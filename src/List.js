@@ -1,28 +1,7 @@
 import React, { Component } from 'react'
-import { Collapse, Button } from 'antd'
-import './Add.css'
-const mock = [
-    {
-        name: '1',
-        text: '1231313',
-        date: '2018/5/21'
-    },
-    {
-        name: '1',
-        text: '1231313',
-        date: '2018/5/21'
-    },
-    {
-        name: '1',
-        text: '1231313',
-        date: '2018/5/21'
-    },
-    {
-        name: '1',
-        text: '1231313',
-        date: '2018/5/21'
-    }
-]
+import { Collapse } from 'antd'
+import PropTypes from 'prop-types'
+import './List.css'
 class List extends Component {
   constructor (props) {
     super(props)
@@ -33,10 +12,11 @@ class List extends Component {
   renderList (data) {
     let res = []
     data.map((item, index) => {
-        const elem = <Collapse.Panel header = {item.name} key = {index}>
-                        <p>{item.text}</p>
-                     </Collapse.Panel>
-        res.push(elem)
+      const elem =
+        <Collapse.Panel header={item.name} key={index}>
+          <p>{item.text}</p>
+        </Collapse.Panel>
+      res.push(elem)
     })
     return res
   }
@@ -45,15 +25,19 @@ class List extends Component {
     onSwitchRouter('search')
   }
   render () {
+    const {list} = this.props
     return (
       <div className='list'>
-        <Button onClick = {this.onSwitchToSearch} type='primary'>返回查询</Button>
         <Collapse>
-            {this.renderList(mock)}
+          {this.renderList(list)}
         </Collapse>
       </div>
     )
   }
 }
 
+List.propTypes = {
+  onSwitchRouter: PropTypes.func,
+  list: PropTypes.array
+}
 export default List

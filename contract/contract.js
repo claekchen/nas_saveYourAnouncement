@@ -26,6 +26,7 @@ class AnouncementContract {
     })
   }
   init () {
+    this.count = new BigNumber(1)
   }
 
   add (name, text, date) {
@@ -44,7 +45,7 @@ class AnouncementContract {
   getByName (name) {
     let aAnouncementID = this.userAnouncement.get(name)
     let res = []
-    for (const index in aAnouncementID) {
+    for (const index of aAnouncementID) {
       res.push(this.anouncement.get(index))
     }
     return res
