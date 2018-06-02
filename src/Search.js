@@ -25,9 +25,13 @@ class Search extends Component {
   }
   onSuccess (res) {
     const {onUpdateList} = this.props
-    let newList = JSON.parse(res.result)
-    onUpdateList(newList)
-    this.onSwitchToList()
+    if (res.result.includes('TypeError')) {
+      window.alert('此人没有在系统中登录公告。')
+    } else {
+      let newList = JSON.parse(res.result)
+      onUpdateList(newList)
+      this.onSwitchToList()
+    }
   }
   onSearch () {
     const {name} = this.state
